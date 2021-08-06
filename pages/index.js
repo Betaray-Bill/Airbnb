@@ -2,6 +2,7 @@ import Head from 'next/head'
 import LargeCard from '../Components/LargeCard'
 import MediumCar from '../Components/MediumCar'
 import SmallCard from '../Components/SmallCard'
+import Footer from '../Layout/Footer'
 import Hero from '../Layout/Hero'
 
 export default function Home({ exploreData, CardData }) {
@@ -14,7 +15,7 @@ export default function Home({ exploreData, CardData }) {
 
     <Hero />
     
-    <main className="max-w-7xl mx-auto mt-4 p-2 px-4 rounded-2xl shadow-2xl bg-white">
+    <main className="max-w-7xl mx-auto mt-4 p-2 px-4 rounded-2xl shadow-2xl bg-white mb-8">
 
       <section className="pt-6">
         <h2 className="text-2xl md:text-4xl font-semibold pb-5 mt-2">Explore Nearby Paradise</h2> 
@@ -67,7 +68,10 @@ export default function Home({ exploreData, CardData }) {
       />
 
     </main>
-
+    
+    <div className="relative w-screen m-o mt-16 ">
+      <Footer />
+    </div>
     </div>
   )
 }
