@@ -15,7 +15,7 @@ function Hero() {
             >
             <Header />
 
-            <div className="">
+            <div className="z-30">
                 <div className="absolute items-center left-12 md:top-24 md:left-32 pt-2">
                     <h2 className="text-white w-72 text-4xl">
                         Olympian & 
