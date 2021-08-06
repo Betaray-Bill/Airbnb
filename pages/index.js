@@ -69,7 +69,7 @@ export default function Home({ exploreData, CardData }) {
 
     </main>
     
-    <div className="relative w-screen m-o mt-16 ">
+    <div className="bg-gray-200 p-4 mx-auto">
       <Footer />
     </div>
     </div>

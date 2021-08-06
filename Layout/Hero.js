@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Header from "../Components/Header";
 
 function Hero() {
@@ -27,8 +26,6 @@ function Hero() {
                     <button className="text-md text-gray-900 font-bold bg-white px-4 py-4 rounded-lg mt-8 hover:bg-gray-900 hover:scale-105 hover:text-white transition tranform duration-200 ease-out">Explore now</button>
                 </div>
             </div>
-
-
 
         </div>
     )
