@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import Footer from "../Layout/Footer";
 import { format } from "date-fns"
 import InfoCard from "../Components/InfoCard";
+import Map from "../Components/Map";
 
 
 function Search({ searchResult }) {
@@ -21,7 +22,7 @@ function Search({ searchResult }) {
 
     
     return (
-        <div className="h-screen overflow-x-hidden">
+        <div className="overflow-x-hidden">
             <div style={{
                 backgroundImage:"url('https://a0.muscache.com/4ea/air/r:w3100-h1200-sfit,e:fjpg-c70/pictures/e9bdd1d2-2cb9-48cd-9aaf-919573046e8c.jpg')",
                 backgroundRepeat:"no-repeat",
@@ -34,8 +35,8 @@ function Search({ searchResult }) {
                 <Header />
             </div>
 
-            <main className="flex mt-8">
-                <section className="m-4 pty-4">
+            <main className="flex flex-col mt-8">
+                <section className="flex-grow flex-row pt-4 px-4">
                     <p className="text-lg font-medium">300+ Stays - {rangeOfDays} for {noGuest} guests</p>
                     <h2 className="text-4xl py-3 font-semibold">Stays in {location}</h2>
                     <div className="hidden mt-4  space-x-4 lg:inline-flex">
@@ -47,25 +48,31 @@ function Search({ searchResult }) {
                     </div>
                     <p className="hidden text-lg mt-4 text-gray-600 lg:flex">Review COVID-19 travel restrictions before you book.
                      <a href="https://www.un.org/en/coronavirus" className="text-blue-600 px-2">Learn More</a></p>
-                    <hr className="my-4 w-screen "/>
+                    <hr className="my-4 w- "/>
+                
+
+                    <div className="flex flex-col m-2">
+                        {
+                            searchResult?.map(item => (
+                                <InfoCard 
+                                    img={item.img}
+                                    location={item.location}
+                                    title={item.title}
+                                    desc={item.description}
+                                    star = {item.star}
+                                    price={item.price}
+                                    total={item.total}
+                                />
+                            ))
+                        }
+
+                    </div>
+                </section>
+
+                <section className="hidden lg:inline-flex lg:min-w-[600px]">
+                    <Map />
                 </section>
             </main>
-
-            <div>
-                {
-                    searchResult?.map(item => (
-                        <InfoCard 
-                            img={item.img}
-                            location={item.location}
-                            title={item.title}
-                            desc={item.description}
-                            star = {item.star}
-                            price={item.price}
-                            total={item.total}
-                        />
-                    ))
-                }
-            </div>
 
             <Footer />
         </div>
