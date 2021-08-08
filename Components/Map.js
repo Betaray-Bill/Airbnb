@@ -1,18 +1,28 @@
 import { useState } from 'react';
 import ReactMapGL from 'react-map-gl';
+import getCenter from "geolib/es/getCenter"
+import { result } from 'lodash';
 
-function Map() {
+function Map({ searchResult }) {
 
+    // MApping Long and Latitude from search results
+    
+    const coordinate = searchResult.map((result) => ({
+        longitude: result.long,
+        latitude: result.lat,
+    }))
+    const center = getCenter(coordinate)
+    
     const [viewport, setViewport] = useState({
         width: '100vw',
         height: '60vh',
-        latitude: 37.7577,
-        longitude: -122.4376,
+        latitude: center.latitude,
+        longitude: center.longitude,
         zoom: 11
     });
 
     return (
-        <div>
+        <div className="relative w-screen flex items-center mx-auto ml-12">
             <ReactMapGL
             mapStyle="mapbox://styles/rsurya/cks1wql2q565g17o5bzg7pm4v"
             mapboxApiAccessToken={process.env.mapbox_key}
