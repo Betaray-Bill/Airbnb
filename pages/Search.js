@@ -81,7 +81,7 @@ function Search({ searchResult }) {
 
 export default Search
 
-export async function getServerSideProps(){
+export default async function getServerSideProps(){
     const searchResult = await fetch("https://links.papareact.com/isz")
                                     .then(res => res.json())
 
