@@ -10,7 +10,7 @@ export default function Home({ exploreData, CardData }) {
     <div className="overflow-x-hidden h-max bg-gray-100">
       <Head>
         <title>Airbnb-Clone Meow</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="https://toppng.com/uploads/preview/airbnb-a-icon-vector-logo-airbnb-logo-vector-115628719165xnp0e2zd1.png" />
       </Head>
 
     <Hero />
