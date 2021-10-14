@@ -9,4 +9,4 @@ module.exports = {
 
 module.exports = {
     target: "serverless"
-  }
+}
